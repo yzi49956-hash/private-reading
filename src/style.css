@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap');
 
 * {
   box-sizing: border-box;
@@ -33,38 +33,60 @@ body {
     #080909;
 }
 
+.intro-top {
+  font-family: 'Inter', sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 6px;
+
+  margin-bottom: 28px;
+
+  color: rgba(255,255,255,0.35);
+}
+
 .intro-title {
-  font-size: 72px;
+  font-family: 'Cormorant Garamond', serif;
 
-  letter-spacing: 12px;
+  font-size: 84px;
 
-  margin-bottom: 48px;
+  font-weight: 300;
 
-  color: rgba(255,255,255,0.92);
+  letter-spacing: 8px;
+
+  margin-bottom: 56px;
+
+  color: rgba(255,255,255,0.94);
 }
 
 .enter-button {
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.12);
 
-  background: transparent;
+  background: rgba(255,255,255,0.02);
 
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.72);
 
-  padding: 14px 32px;
+  padding: 14px 34px;
 
-  font-size: 14px;
+  border-radius: 999px;
+
+  font-family: 'Inter', sans-serif;
+
+  font-size: 12px;
 
   letter-spacing: 4px;
 
   cursor: pointer;
 
-  transition: 0.3s;
+  transition: 0.35s ease;
 }
 
 .enter-button:hover {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.08);
 
   color: white;
+
+  transform: translateY(-2px);
 }
 
 /* 第二层 */
@@ -146,19 +168,28 @@ body {
 }
 
 .reader h1 {
-  font-size: 52px;
+  font-family: 'Cormorant Garamond', serif;
 
-  font-weight: 400;
+  font-size: 64px;
+
+  font-weight: 300;
 
   margin-bottom: 72px;
 
-  line-height: 1.4;
+  line-height: 1.3;
+
+  letter-spacing: 2px;
 }
 
 .article {
+  font-family:
+    "Songti SC",
+    "Noto Serif SC",
+    serif;
+
   font-size: 20px;
 
-  line-height: 2.6;
+  line-height: 2.7;
 
   color: rgba(255,255,255,0.78);
 
