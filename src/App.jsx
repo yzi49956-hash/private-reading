@@ -1127,18 +1127,25 @@ export default function App() {
   return (
     <div className="reader">
       <div
-        className="back"
-        onClick={() => setStage("archive")}
-      >
-        ← 返回目录
-      </div>
+  className="floating-back"
+  onClick={() => setStage("archive")}
+>
+  Archive
+</div>
 
       <div className="reader-inner">
         <h1>{articles[current].title}</h1>
 
         <div className="article">
-          {articles[current].content}
-        </div>
+  {articles[current].content
+    .trim()
+    .split("\n\n")
+    .map((paragraph, index) => (
+      <p key={index}>
+        {paragraph}
+      </p>
+    ))}
+</div>
       </div>
     </div>
   );

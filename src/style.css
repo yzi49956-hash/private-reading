@@ -40,7 +40,7 @@ body {
 
   letter-spacing: 6px;
 
-  margin-bottom: 28px;
+  margin-bottom: 64px;
 
   color: rgba(255,255,255,0.35);
 }
@@ -144,27 +144,45 @@ body {
   padding: 48px 24px 120px;
 }
 
-.back {
-  font-size: 14px;
+/* 悬浮返回 */
 
-  color: rgba(255,255,255,0.35);
+.floating-back {
+  position: fixed;
+
+  top: 28px;
+  right: 28px;
+
+  z-index: 100;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.04);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: rgba(255,255,255,0.6);
+
+  font-family: 'Inter', sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
 
   cursor: pointer;
 
-  margin-bottom: 80px;
-
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.back:hover {
+.floating-back:hover {
+  background: rgba(255,255,255,0.08);
+
   color: white;
-}
 
-.reader-inner {
-  width: 100%;
-  max-width: 760px;
-
-  margin: 0 auto;
+  transform: translateY(-2px);
 }
 
 .reader h1 {
@@ -193,9 +211,17 @@ body {
 
   color: rgba(255,255,255,0.78);
 
-  white-space: pre-wrap;
-
   letter-spacing: 0.4px;
+}
+
+/* 真正段落 */
+
+.article p {
+  margin: 0 0 2em 0;
+
+  text-indent: 2em;
+
+  text-align: left;
 }
 
 /* 手机 */
