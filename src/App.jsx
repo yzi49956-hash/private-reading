@@ -62,10 +62,15 @@ export default function App() {
         ))}
       </aside>
 
-      <main className="content">
-        <h2>{articles[current].title}</h2>
+     <main className="content">
+  <div className="content-inner">
+    <h2>{articles[current].title}</h2>
 
-        <div className="article">
+    <div className="article">
+      {articles[current].content}
+    </div>
+  </div>
+</main>
           {articles[current].content}
         </div>
       </main>
