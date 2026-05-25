@@ -48,7 +48,7 @@ body {
 .intro-title {
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 84px;
+  font-size: 104px;
 
   font-weight: 300;
 
@@ -217,11 +217,15 @@ body {
 /* 真正段落 */
 
 .article p {
-  margin: 0 0 2em 0;
+  margin: 0;
 
   text-indent: 2em;
 
   text-align: left;
+}
+
+.spacer {
+  height: 1.8em;
 }
 
 /* 手机 */
@@ -229,7 +233,7 @@ body {
 @media (max-width: 768px) {
 
   .intro-title {
-    font-size: 42px;
+    font-size: 56px;
 
     letter-spacing: 8px;
   }

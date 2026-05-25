@@ -1139,12 +1139,18 @@ export default function App() {
         <div className="article">
   {articles[current].content
     .trim()
-    .split("\n\n")
-    .map((paragraph, index) => (
-      <p key={index}>
-        {paragraph}
-      </p>
-    ))}
+    .split("\n")
+    .map((line, index) => {
+      if (line.trim() === "") {
+        return <div className="spacer" key={index}></div>;
+      }
+
+      return (
+        <p key={index}>
+          {line}
+        </p>
+      );
+    })}
 </div>
       </div>
     </div>
