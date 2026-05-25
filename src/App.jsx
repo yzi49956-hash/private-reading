@@ -11,8 +11,6 @@ const articles = [
 
 有些东西明明已经删除了，
 却还是会在某一天突然弹出来。
-
-像河流底下没冲走的石头。
 `,
   },
 
@@ -24,25 +22,34 @@ const articles = [
 她其实听见了。
 
 但她还是回头了。
-
-于是整个世界开始倒退。
-`,
-  },
-
-  {
-    title: "河流",
-    content: `
-时间像河流。
-
-不是因为它流动。
-
-而是因为你永远无法踏进同一段水里。
 `,
   },
 ];
 
 export default function App() {
+  const [entered, setEntered] = useState(false);
   const [current, setCurrent] = useState(0);
+
+  /* 开场页 */
+
+  if (!entered) {
+    return (
+      <div
+        className="intro"
+        onClick={() => setEntered(true)}
+      >
+        <div className="intro-text">
+          不要回头
+        </div>
+
+        <div className="intro-tip">
+          click to enter
+        </div>
+      </div>
+    );
+  }
+
+  /* 正式页面 */
 
   return (
     <div className="layout">

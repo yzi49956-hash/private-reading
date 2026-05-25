@@ -160,6 +160,60 @@ body {
   border-radius: 999px;
 }
 
+/* 开场页 */
+
+.intro {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  background:
+    radial-gradient(circle at center, rgba(80,80,120,0.15), transparent 50%),
+    #05070b;
+
+  transition: 1s;
+}
+
+.intro-text {
+  font-size: 64px;
+
+  letter-spacing: 12px;
+
+  color: rgba(255,255,255,0.92);
+
+  animation: breathe 4s infinite ease-in-out;
+}
+
+.intro-tip {
+  margin-top: 28px;
+
+  font-size: 12px;
+
+  letter-spacing: 4px;
+
+  color: rgba(255,255,255,0.35);
+}
+
+@keyframes breathe {
+  0% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.45;
+  }
+}
+
 /* 手机 */
 
 @media (max-width: 768px) {
