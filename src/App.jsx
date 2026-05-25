@@ -11,6 +11,8 @@ const articles = [
 
 有些东西明明已经删除了，
 却还是会在某一天突然弹出来。
+
+像河流底下没冲走的石头。
 `,
   },
 
@@ -22,62 +24,91 @@ const articles = [
 她其实听见了。
 
 但她还是回头了。
+
+于是整个世界开始倒退。
+`,
+  },
+
+  {
+    title: "河流",
+    content: `
+时间像河流。
+
+不是因为它流动。
+
+而是因为你永远无法踏进同一段水里。
 `,
   },
 ];
 
 export default function App() {
-  const [entered, setEntered] = useState(false);
-  const [current, setCurrent] = useState(0);
+  const [stage, setStage] = useState("intro");
+  const [current, setCurrent] = useState(null);
 
-  /* 开场页 */
+  /* 第一层 */
 
-  if (!entered) {
+  if (stage === "intro") {
     return (
-      <div
-        className="intro"
-        onClick={() => setEntered(true)}
-      >
-        <div className="intro-text">
+      <div className="intro">
+        <div className="intro-title">
           不要回头
         </div>
 
-        <div className="intro-tip">
-          click to enter
+        <button
+          className="enter-button"
+          onClick={() => setStage("archive")}
+        >
+          进入阅读
+        </button>
+      </div>
+    );
+  }
+
+  /* 第二层 */
+
+  if (stage === "archive") {
+    return (
+      <div className="archive">
+        <div className="archive-inner">
+          <div className="archive-title">
+            Archive
+          </div>
+
+          {articles.map((article, index) => (
+            <div
+              key={index}
+              className="archive-item"
+              onClick={() => {
+                setCurrent(index);
+                setStage("reader");
+              }}
+            >
+              {article.title}
+            </div>
+          ))}
         </div>
       </div>
     );
   }
 
-  /* 正式页面 */
+  /* 第三层 */
 
   return (
-    <div className="layout">
-      <aside className="sidebar">
-        <h1 className="logo">Astrid Archive</h1>
+    <div className="reader">
+      <div
+        className="back"
+        onClick={() => setStage("archive")}
+      >
+        ← 返回目录
+      </div>
 
-        {articles.map((article, index) => (
-          <div
-            key={index}
-            className={`menu-item ${
-              current === index ? "active" : ""
-            }`}
-            onClick={() => setCurrent(index)}
-          >
-            {article.title}
-          </div>
-        ))}
-      </aside>
+      <div className="reader-inner">
+        <h1>{articles[current].title}</h1>
 
-      <main className="content">
-        <div className="content-inner">
-          <h2>{articles[current].title}</h2>
-
-          <div className="article">
-            {articles[current].content}
-          </div>
+        <div className="article">
+          {articles[current].content}
         </div>
-      </main>
+      </div>
     </div>
   );
 }
